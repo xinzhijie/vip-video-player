@@ -34,24 +34,6 @@
         <script src="./script.js"></script>
     </body>
     <script>
-        const hasAlerted = localStorage.getItem('hasAlerted');
-        if (hasAlerted) {
-            localStorage.removeItem('hasAlerted');
-        }
-
-        // promotion link qrcode dialog
-        const promotionQr = document.querySelector('#promotion-qr');
-
-        function showDialog() {
-            if (typeof promotionQr.showModal === "function") {
-                promotionQr.show();
-            } else {
-                alert("Sorry, the <dialog> API is not supported by this browser.");
-            }
-        }
-
-        function closeDialog() {
-            promotionQr.close();
-        }
+        
     </script>
 </html>
