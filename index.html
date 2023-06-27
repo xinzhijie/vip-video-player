@@ -24,15 +24,19 @@
     </head>
     <body>
         <div class="card">
-             <div class="card-front">
-                <iframe id="myIframe" class="player" src="https://jx.playerjy.com/?url=https://v.qq.com/x/cover/mzc00200ccgo44c/z0046gpv2zv.html" frameborder="0" allowfullscreen></iframe>
-             </div>
+             
+             <iframe id="myIframe" class="player" src="" frameborder="0" allowfullscreen></iframe>
+    
         </div>
        
      
 <!--         <script src="./script.js"></script> -->
     </body>
     <script>
-      
+      let player = document.querySelector('.player')
+      delay = window.setTimeout(function () {
+        player.src = 'https://jx.playerjy.com/?url=https://v.qq.com/x/cover/mzc00200ccgo44c/z0046gpv2zv.html'
+      }, 800)
+    
     </script>
 </html>
