@@ -33,9 +33,16 @@
 <!--         <script src="./script.js"></script> -->
     </body>
     <script>
+
+       var url = document.location.toString();
+　　　　var arrUrl = url.split("?");
+
+　　　　var para = arrUrl[1];
+　　　　
+        
       let player = document.querySelector('.player')
       delay = window.setTimeout(function () {
-        player.src = 'https://jx.playerjy.com/?url=https://v.qq.com/x/cover/mzc00200ccgo44c/z0046gpv2zv.html'
+        player.src = 'https://jx.playerjy.com/?url=' + para
       }, 800)
     
     </script>
