@@ -15,6 +15,11 @@
         <script>
             var iframe = document.getElementById('myIframe');
             iframe.contentWindow.navigator.userAgent = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1';
+            Object.defineProperty(iframe.contentWindow.navigator, 'userAgent', {
+              value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+              configurable: false,
+              writable: false
+            });
         </script>
     </head>
     <body>
