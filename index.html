@@ -1,38 +1,66 @@
-<!--
- * @LastEditors: Jiang Menghao
--->
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-        <meta name="keywords" content="小胖解析">
-        <meta name="description" content="小胖解析">
-        <title>小胖解析</title>
-        <link rel="icon" href="./favicon.ico">
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
-        <div class="card">
-            <h1>因为引用第三方链接，如若出现广告，请不要轻易相信，小胖不承担任何责任！！！</h1>
-             <div class="card-back">
-             <iframe id="myIframe" class="player" src="" frameborder="0" allowfullscreen></iframe>
-             </div>
-        </div>
-       
-    </body>
-    <script>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>小胖解析</title>
 
-       var url = document.location.toString();
-　　　　var arrUrl = url.split("?");
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-　　　　var para = arrUrl[1];
-　　　　
-        
-      let player = document.querySelector('.player')
-      delay = window.setTimeout(function () {
-        player.src = 'https://jx.qqqjx.com/?url=' + para
-      }, 800)
+    #textDiv {
+      height: 100px; /* 设置第一个<div>的固定高度 */
+      background-color: lightgray;
+      text-align: center;
+    }
+
+    #iframeDiv {
+      position: absolute; /* 使用绝对定位 */
+      top: calc(100px + 10px); /* 第二个<div>距离顶部的位置（考虑上方文本区域和间距） */
+      left: 0; /* 左侧与窗口边缘对齐 */
+      right: 0; /* 右侧与窗口边缘对齐 */
+      bottom: 0; /* 底部与窗口底部对齐 */
+
+   }
     
-    </script>
+   iframe {
+     width :100%;
+     height :100%;
+     border:none;
+
+   }
+   
+ </style>
+
+</head>
+
+<body>
+   <div id="textDiv">
+       <h1>因为引用第三方链接，如若出现广告，<span style="color: red;">请不要轻易相信</span>，小胖不承担任何责任！！！</h1>
+       <p>欢迎观看~~~~~</p>
+   </div>
+
+   <div id="iframeDiv">
+       <!-- 在src属性中指定要嵌入的网页地址 -->
+       <!-- 注意：由于同源策略限制，被嵌入页面必须与父页面具有相同的协议、域名和端口 -->
+       <iframe class="player" src=""></iframe>
+   </div>
+
+</body>
+<script>
+
+  var url = document.location.toString();
+  var arrUrl = url.split("?");
+  var para = arrUrl[1];
+
+   
+ let player = document.querySelector('.player')
+ delay = window.setTimeout(function () {
+   player.src = 'https://jx.qqqjx.com/?url=' + para
+ }, 800)
+
+</script>
 </html>
